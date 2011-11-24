@@ -18,6 +18,6 @@ $(document).ready(function () {
 			$.getJSON('main/song_id.json?'+$("#q").serialize(), function(data) {
 				$("#player").html('<object width="250" height="40" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="gsSong'+data+'" name="gsSong'+data+'"><param name="movie" value="http://grooveshark.com/songWidget.swf" /><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=cowbell.grooveshark.com&songIDs='+data+'&style=metal&p=1" /><!--[if !IE]>--><object type="application/x-shockwave-flash" data="http://grooveshark.com/songWidget.swf" width="250" height="40"><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=cowbell.grooveshark.com&songIDs='+data+'&style=metal&p=1" /></object><!--<![endif]--></object>');
 			});
-		}, 500));
+		}, 200));
 	});
 });

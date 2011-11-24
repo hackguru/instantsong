@@ -1,0 +1,33 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	font: Arial, Helvetica, sans-serif normal 10px;
+	background: #222;
+}
+fieldset.search {
+	border: none;
+	width: 243px;
+	margin: 0 auto;
+	background: #222;
+}
+.search input {
+	border: none;
+	float: left;
+}
+.search input.box {
+	color: #fff;
+	font-size: 1.2em;
+	width: 243px;
+	height: 32px;
+	padding: 8px;
+	background: #616161 url(<%= asset_path 'search_bg.png' %>) no-repeat left -98px;
+	background-size: 100%;
+	margin-left: -4px;
+}
+.search input.box:focus {
+	background: #616161 url(<%= asset_path 'search_bg.png' %>) no-repeat left -49px;
+	background-size: 100%;
+	outline: none;
+}

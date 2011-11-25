@@ -16,8 +16,24 @@ $(document).ready(function () {
 		clearTimeout($(this).data('timeout'));
 		$(this).data('timeout', setTimeout(function () {
 			$.getJSON('main/song_id.json?'+$("#q").serialize(), function(data) {
-				$("#player").html('<object width="250" height="40" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="gsSong'+data+'" name="gsSong'+data+'"><param name="movie" value="http://grooveshark.com/songWidget.swf" /><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=cowbell.grooveshark.com&songIDs='+data+'&style=metal&p=1" /><!--[if !IE]>--><object type="application/x-shockwave-flash" data="http://grooveshark.com/songWidget.swf" width="250" height="40"><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=cowbell.grooveshark.com&songIDs='+data+'&style=metal&p=1" /></object><!--<![endif]--></object>');
+				$("#player").html(
+					'<object width="250" height="250" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="gsManySongs" name="gsManySongs">'+
+					'<param name="movie" value="http://grooveshark.com/widget.swf" />'+
+					'<param name="wmode" value="window" />'+
+					'<param name="allowScriptAccess" value="always" />'+
+					'<param name="flashvars" value="hostname=cowbell.grooveshark.com&songIDs='+data+'&bbg=1f2021&bth=1f2021&pfg=1f2021&lfg=1f2021&bt=FFFFFF&pbg=FFFFFF&pfgh=FFFFFF&si=FFFFFF&lbg=FFFFFF&lfgh=FFFFFF&sb=FFFFFF&bfg=666666&pbgh=666666&lbgh=666666&sbh=666666&p=1" />'+
+					'<!--[if !IE]>-->'+
+					'<object type="application/x-shockwave-flash" data="http://grooveshark.com/widget.swf" width="250" height="250">'+
+					'<param name="wmode" value="window" />'+
+					'<param name="allowScriptAccess" value="always" />'+
+					'<param name="flashvars" value="hostname=cowbell.grooveshark.com&songIDs='+data+'&bbg=1f2021&bth=1f2021&pfg=1f2021&lfg=1f2021&bt=FFFFFF&pbg=FFFFFF&pfgh=FFFFFF&si=FFFFFF&lbg=FFFFFF&lfgh=FFFFFF&sb=FFFFFF&bfg=666666&pbgh=666666&lbgh=666666&sbh=666666&p=1" />'+
+					'</object>'+
+					'<!--<![endif]-->'+
+					'</object>'
+					);
 			});
-		}, 200));
+		}, 800));
 	});
 });
+
+

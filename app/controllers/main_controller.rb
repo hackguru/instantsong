@@ -8,7 +8,7 @@ class MainController < ApplicationController
     parsed_json = ActiveSupport::JSON.decode(c.body_str)
     song_id = []
     parsed_json.each do |song|
-      song_id << song['SongID']
+      song_id << song['SongID'].to_s
     end
 
     respond_to do |format|
